@@ -1,0 +1,28 @@
+<h1 id="tableLabel1">Books</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!books"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel1" *ngIf="books">
+  <thead>
+  <tr>
+    <th>http code</th>
+    <th>payload</th>
+    <th>Codigo</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Published</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books | ObjToArray">
+    <td>{{ book.code }}</td>
+    <td>{{ book.data }}</td>
+    <td>{{ book.codebook }}</td>
+    <td>{{ book.title }}</td>
+    <td>{{ book.description }}</td>
+    <td>{{ book.published }}</td>
+  </tr>
+  </tbody>
+</table>
